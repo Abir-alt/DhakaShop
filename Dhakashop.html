@@ -1,0 +1,2041 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ZENJI — Anime Streetwear</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Inter", sans-serif;
+            background: #f5f4f0;
+            color: #171717;
+        }
+
+        .container-width {
+            width: min(1180px, 92%);
+            margin: auto;
+        }
+
+        .product-card {
+            transition: transform 0.2s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .product-image {
+            transition: transform 0.35s ease;
+        }
+
+        .product-card:hover .product-image {
+            transform: scale(1.04);
+        }
+
+        .cart-drawer {
+            transition: transform 0.3s ease;
+        }
+
+        .cart-hidden {
+            transform: translateX(100%);
+        }
+
+        .cart-visible {
+            transform: translateX(0);
+        }
+
+        .size-btn.active {
+            background: #171717;
+            color: white;
+        }
+
+        .filter-btn.active {
+            background: #171717;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+
+            .hero-title {
+                font-size: 48px;
+                line-height: 1;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     TOP BAR
+===================================================== -->
+
+<div class="bg-black text-white text-center text-xs py-2 px-4">
+    NEW DROP AVAILABLE — FREE SHIPPING ON ORDERS OVER $100
+</div>
+
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<header class="bg-[#f5f4f0] border-b border-gray-200 sticky top-0 z-40">
+
+    <div class="container-width h-16 flex items-center justify-between">
+
+        <!-- Logo -->
+        <a
+            href="#"
+            class="text-2xl font-extrabold tracking-tight">
+
+            ZENJI<span class="text-red-500">.</span>
+
+        </a>
+
+
+        <!-- Desktop navigation -->
+        <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+
+            <a
+                href="#shop"
+                class="hover:text-red-500 transition">
+                Shop
+            </a>
+
+            <a
+                href="#collections"
+                class="hover:text-red-500 transition">
+                Collections
+            </a>
+
+            <a
+                href="#lookbook"
+                class="hover:text-red-500 transition">
+                Lookbook
+            </a>
+
+            <a
+                href="#about"
+                class="hover:text-red-500 transition">
+                About
+            </a>
+
+        </nav>
+
+
+        <!-- Cart button -->
+        <button
+            onclick="openCart()"
+            aria-label="Open shopping cart"
+            class="flex items-center gap-2 border border-black rounded-full px-4 py-2 text-sm font-semibold hover:bg-black hover:text-white transition">
+
+            Cart
+
+            <span
+                id="cartCount"
+                class="bg-red-500 text-white rounded-full min-w-5 h-5 px-1 flex items-center justify-center text-xs">
+
+                0
+
+            </span>
+
+        </button>
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="bg-[#e9e7df]">
+
+    <div
+        class="container-width grid md:grid-cols-2 min-h-[650px] items-center gap-10 py-16">
+
+
+        <!-- Hero text -->
+
+        <div>
+
+            <p class="text-sm font-semibold tracking-[0.25em] text-red-500 mb-5">
+                ZENJI / NEW SEASON
+            </p>
+
+
+            <h1 class="hero-title text-7xl font-extrabold tracking-tight mb-6">
+
+                ANIME<br>
+                MEETS<br>
+                STREET.
+
+            </h1>
+
+
+            <p class="text-gray-600 max-w-md leading-7 mb-8">
+
+                Everyday streetwear inspired by anime culture,
+                Japanese graphics and modern city life.
+
+            </p>
+
+
+            <div class="flex gap-3">
+
+                <a
+                    href="#shop"
+                    class="bg-black text-white px-7 py-3 rounded-full font-semibold hover:bg-red-500 transition">
+
+                    Shop now
+
+                </a>
+
+
+                <a
+                    href="#collections"
+                    class="border border-black px-7 py-3 rounded-full font-semibold hover:bg-white transition">
+
+                    Explore
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Hero image -->
+
+        <div class="relative">
+
+            <img
+                src="https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=1000&q=80"
+                alt="Streetwear fashion"
+                class="w-full h-[520px] object-cover rounded-2xl">
+
+
+            <div
+                class="absolute bottom-5 left-5 bg-white px-5 py-4 rounded-xl">
+
+                <p class="text-xs text-gray-500">
+                    FEATURED
+                </p>
+
+                <p class="font-bold">
+                    Urban Collection 01
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     COLLECTIONS
+===================================================== -->
+
+<section
+    id="collections"
+    class="py-20">
+
+    <div class="container-width">
+
+
+        <div class="mb-10">
+
+            <p class="text-red-500 text-sm font-semibold mb-2">
+                SHOP BY STYLE
+            </p>
+
+            <h2 class="text-4xl font-bold">
+                Collections
+            </h2>
+
+        </div>
+
+
+
+        <div class="grid md:grid-cols-3 gap-5">
+
+
+            <!-- Tees -->
+
+            <a
+                href="#shop"
+                onclick="setCategory('Tees')"
+                class="group relative overflow-hidden rounded-2xl h-80">
+
+                <img
+                    src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=800&q=80"
+                    alt="Graphic tees"
+                    class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+
+                <div class="absolute inset-0 bg-black/30"></div>
+
+                <div class="absolute bottom-6 left-6 text-white">
+
+                    <p class="text-sm">
+                        01
+                    </p>
+
+                    <h3 class="text-2xl font-bold">
+                        Graphic Tees
+                    </h3>
+
+                </div>
+
+            </a>
+
+
+
+            <!-- Hoodies -->
+
+            <a
+                href="#shop"
+                onclick="setCategory('Hoodies')"
+                class="group relative overflow-hidden rounded-2xl h-80">
+
+                <img
+                    src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=800&q=80"
+                    alt="Hoodies"
+                    class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+
+                <div class="absolute inset-0 bg-black/30"></div>
+
+                <div class="absolute bottom-6 left-6 text-white">
+
+                    <p class="text-sm">
+                        02
+                    </p>
+
+                    <h3 class="text-2xl font-bold">
+                        Hoodies
+                    </h3>
+
+                </div>
+
+            </a>
+
+
+
+            <!-- Accessories -->
+
+            <a
+                href="#shop"
+                onclick="setCategory('Accessories')"
+                class="group relative overflow-hidden rounded-2xl h-80">
+
+                <img
+                    src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=800&q=80"
+                    alt="Accessories"
+                    class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+
+                <div class="absolute inset-0 bg-black/30"></div>
+
+                <div class="absolute bottom-6 left-6 text-white">
+
+                    <p class="text-sm">
+                        03
+                    </p>
+
+                    <h3 class="text-2xl font-bold">
+                        Accessories
+                    </h3>
+
+                </div>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SHOP
+===================================================== -->
+
+<section
+    id="shop"
+    class="py-20 bg-white">
+
+    <div class="container-width">
+
+
+        <div
+            class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+
+
+            <div>
+
+                <p class="text-red-500 text-sm font-semibold mb-2">
+                    LATEST PIECES
+                </p>
+
+                <h2 class="text-4xl font-bold">
+                    Shop ZENJI
+                </h2>
+
+            </div>
+
+
+
+            <!-- Filters -->
+
+            <div class="flex flex-wrap gap-2">
+
+                <button
+                    onclick="setCategory('All')"
+                    class="filter-btn active px-4 py-2 rounded-full border border-gray-300 text-sm">
+
+                    All
+
+                </button>
+
+
+                <button
+                    onclick="setCategory('Tees')"
+                    class="filter-btn px-4 py-2 rounded-full border border-gray-300 text-sm">
+
+                    Tees
+
+                </button>
+
+
+                <button
+                    onclick="setCategory('Hoodies')"
+                    class="filter-btn px-4 py-2 rounded-full border border-gray-300 text-sm">
+
+                    Hoodies
+
+                </button>
+
+
+                <button
+                    onclick="setCategory('Accessories')"
+                    class="filter-btn px-4 py-2 rounded-full border border-gray-300 text-sm">
+
+                    Accessories
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Product grid -->
+
+        <div
+            id="productGrid"
+            class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     LOOKBOOK
+===================================================== -->
+
+<section
+    id="lookbook"
+    class="py-20">
+
+    <div class="container-width">
+
+
+        <div class="mb-10">
+
+            <p class="text-red-500 text-sm font-semibold mb-2">
+                FROM THE STREET
+            </p>
+
+            <h2 class="text-4xl font-bold">
+                Lookbook
+            </h2>
+
+        </div>
+
+
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+
+
+            <img
+                src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=700&q=80"
+                alt="ZENJI lookbook"
+                class="w-full h-80 object-cover rounded-xl">
+
+
+            <img
+                src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=700&q=80"
+                alt="ZENJI lookbook"
+                class="w-full h-80 object-cover rounded-xl">
+
+
+            <img
+                src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=700&q=80"
+                alt="ZENJI lookbook"
+                class="w-full h-80 object-cover rounded-xl">
+
+
+            <img
+                src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=700&q=80"
+                alt="ZENJI lookbook"
+                class="w-full h-80 object-cover rounded-xl">
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+
+<section
+    id="about"
+    class="bg-black text-white py-20">
+
+    <div
+        class="container-width grid md:grid-cols-2 gap-12 items-center">
+
+
+        <div>
+
+            <p class="text-red-400 text-sm font-semibold mb-3">
+                ABOUT ZENJI
+            </p>
+
+            <h2 class="text-4xl md:text-5xl font-bold">
+
+                Wear what<br>
+                feels like you.
+
+            </h2>
+
+        </div>
+
+
+        <div>
+
+            <p class="text-gray-400 leading-8">
+
+                ZENJI is an independent streetwear concept built around
+                anime-inspired graphics, relaxed silhouettes and everyday
+                pieces. The idea is simple — clothes that feel expressive
+                without trying too hard.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="bg-black text-gray-400 border-t border-gray-800">
+
+    <div class="container-width py-10">
+
+        <div
+            class="flex flex-col md:flex-row justify-between gap-6">
+
+
+            <div>
+
+                <h3 class="text-white text-xl font-bold">
+
+                    ZENJI<span class="text-red-500">.</span>
+
+                </h3>
+
+                <p class="text-sm mt-2">
+                    Anime inspired. Street approved.
+                </p>
+
+            </div>
+
+
+            <div class="flex gap-6 text-sm">
+
+                <a
+                    href="#"
+                    class="hover:text-white">
+                    Instagram
+                </a>
+
+                <a
+                    href="#"
+                    class="hover:text-white">
+                    TikTok
+                </a>
+
+                <a
+                    href="#"
+                    class="hover:text-white">
+                    Contact
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div
+            class="border-t border-gray-800 mt-8 pt-6 text-xs">
+
+            © 2026 ZENJI. Demo storefront for design assessment.
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =====================================================
+     CART OVERLAY
+===================================================== -->
+
+<div
+    id="cartOverlay"
+    onclick="closeCart()"
+    class="fixed inset-0 bg-black/40 z-40 hidden">
+</div>
+
+
+
+<!-- =====================================================
+     CART DRAWER
+===================================================== -->
+
+<aside
+    id="cartDrawer"
+    class="cart-drawer cart-hidden fixed top-0 right-0 w-full sm:w-[420px] h-full bg-white z-50 shadow-2xl flex flex-col">
+
+
+    <!-- Cart header -->
+
+    <div
+        class="flex items-center justify-between px-6 py-5 border-b">
+
+        <div>
+
+            <h2 class="text-xl font-bold">
+                Your Cart
+            </h2>
+
+            <p
+                id="cartItemsText"
+                class="text-xs text-gray-500 mt-1">
+
+                0 items
+
+            </p>
+
+        </div>
+
+
+        <button
+            onclick="closeCart()"
+            aria-label="Close cart"
+            class="text-2xl">
+
+            ×
+
+        </button>
+
+    </div>
+
+
+
+    <!-- Cart items -->
+
+    <div
+        id="cartItems"
+        class="flex-1 overflow-y-auto p-6">
+
+    </div>
+
+
+
+    <!-- Cart total -->
+
+    <div class="border-t p-6">
+
+        <div class="flex justify-between mb-2">
+
+            <span class="text-gray-500">
+                Subtotal
+            </span>
+
+            <span
+                id="cartSubtotal"
+                class="font-semibold">
+
+                $0.00
+
+            </span>
+
+        </div>
+
+
+        <div class="flex justify-between mb-4">
+
+            <span class="text-gray-500">
+                Shipping
+            </span>
+
+            <span
+                id="cartShipping"
+                class="font-semibold">
+
+                $0.00
+
+            </span>
+
+        </div>
+
+
+        <div
+            class="flex justify-between text-lg font-bold mb-5">
+
+            <span>
+                Total
+            </span>
+
+            <span id="cartTotal">
+                $0.00
+            </span>
+
+        </div>
+
+
+        <button
+            onclick="checkout()"
+            class="w-full bg-black text-white py-3 rounded-full font-semibold hover:bg-red-500 transition">
+
+            Checkout
+
+        </button>
+
+
+        <p class="text-xs text-gray-400 text-center mt-3">
+
+            Demo checkout — no real payment is processed.
+
+        </p>
+
+    </div>
+
+</aside>
+
+
+
+<!-- =====================================================
+     PRODUCT DETAILS MODAL
+===================================================== -->
+
+<div
+    id="productModal"
+    class="fixed inset-0 bg-black/60 z-[70] hidden items-center justify-center p-5">
+
+
+    <div
+        class="bg-white rounded-2xl w-full max-w-4xl max-h-[90vh] overflow-y-auto">
+
+
+        <div class="grid md:grid-cols-2">
+
+
+            <!-- Product image -->
+
+            <div class="bg-[#f1f0eb]">
+
+                <img
+                    id="detailImage"
+                    src=""
+                    alt=""
+                    class="w-full h-[500px] object-cover">
+
+            </div>
+
+
+
+            <!-- Product information -->
+
+            <div class="p-7 md:p-10 relative">
+
+
+                <button
+                    onclick="closeProductDetails()"
+                    aria-label="Close product details"
+                    class="absolute right-5 top-5 text-2xl hover:text-red-500">
+
+                    ×
+
+                </button>
+
+
+                <p
+                    id="detailCategory"
+                    class="text-red-500 text-sm font-semibold mb-3">
+
+                </p>
+
+
+                <h2
+                    id="detailName"
+                    class="text-3xl font-bold pr-8">
+
+                </h2>
+
+
+                <p
+                    id="detailPrice"
+                    class="text-xl font-semibold mt-4">
+
+                </p>
+
+
+                <p
+                    id="detailDescription"
+                    class="text-gray-600 leading-7 mt-6">
+
+                </p>
+
+
+                <div class="mt-7">
+
+                    <p class="text-sm font-semibold mb-3">
+                        Select size
+                    </p>
+
+
+                    <div
+                        id="detailSizes"
+                        class="flex flex-wrap gap-2">
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    id="detailAddButton"
+                    class="w-full mt-8 bg-black text-white py-3 rounded-lg font-semibold hover:bg-red-500 transition">
+
+                    Add to cart
+
+                </button>
+
+
+                <p class="text-xs text-gray-400 text-center mt-4">
+
+                    Free shipping on orders over $100
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     CHECKOUT MODAL
+===================================================== -->
+
+<div
+    id="checkoutModal"
+    class="fixed inset-0 bg-black/50 z-[80] hidden items-center justify-center p-5">
+
+
+    <div
+        class="bg-white rounded-2xl w-full max-w-md p-7">
+
+
+        <div class="flex justify-between mb-6">
+
+            <h2 class="text-2xl font-bold">
+                Checkout
+            </h2>
+
+
+            <button
+                onclick="closeCheckout()"
+                aria-label="Close checkout"
+                class="text-2xl">
+
+                ×
+
+            </button>
+
+        </div>
+
+
+
+        <div class="space-y-4">
+
+
+            <div>
+
+                <label
+                    for="customerName"
+                    class="text-sm font-medium block mb-1">
+
+                    Name
+
+                </label>
+
+
+                <input
+                    id="customerName"
+                    type="text"
+                    placeholder="Your name"
+                    class="w-full border border-gray-300 rounded-lg px-4 py-3 outline-none focus:border-black">
+
+            </div>
+
+
+
+            <div>
+
+                <label
+                    for="customerEmail"
+                    class="text-sm font-medium block mb-1">
+
+                    Email
+
+                </label>
+
+
+                <input
+                    id="customerEmail"
+                    type="email"
+                    placeholder="you@example.com"
+                    class="w-full border border-gray-300 rounded-lg px-4 py-3 outline-none focus:border-black">
+
+            </div>
+
+
+
+            <div>
+
+                <label
+                    for="customerAddress"
+                    class="text-sm font-medium block mb-1">
+
+                    Address
+
+                </label>
+
+
+                <textarea
+                    id="customerAddress"
+                    rows="3"
+                    placeholder="Delivery address"
+                    class="w-full border border-gray-300 rounded-lg px-4 py-3 outline-none focus:border-black"></textarea>
+
+            </div>
+
+
+
+            <button
+                onclick="placeOrder()"
+                class="w-full bg-black text-white py-3 rounded-full font-semibold hover:bg-red-500 transition">
+
+                Place Demo Order
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<script>
+
+
+// =====================================================
+// PRODUCT DATA
+// =====================================================
+
+const products = [
+
+    {
+        id: 1,
+
+        name: "Oni Signal Tee",
+
+        price: 42,
+
+        category: "Tees",
+
+        description:
+            "A relaxed graphic tee with an anime-inspired design. Made for everyday streetwear looks.",
+
+        image:
+            "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=700&q=80",
+
+        sizes: ["S", "M", "L", "XL"]
+    },
+
+
+    {
+        id: 2,
+
+        name: "Tokyo Nights Tee",
+
+        price: 45,
+
+        category: "Tees",
+
+        description:
+            "Clean oversized styling with a bold city-inspired graphic. Easy to pair with everyday outfits.",
+
+        image:
+            "https://images.unsplash.com/photo-1503341504253-dff4815485f1?auto=format&fit=crop&w=700&q=80",
+
+        sizes: ["S", "M", "L", "XL"]
+    },
+
+
+    {
+        id: 3,
+
+        name: "Shadow City Hoodie",
+
+        price: 78,
+
+        category: "Hoodies",
+
+        description:
+            "A comfortable heavyweight hoodie with a minimal streetwear look and relaxed fit.",
+
+        image:
+            "https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=700&q=80",
+
+        sizes: ["S", "M", "L", "XL"]
+    },
+
+
+    {
+        id: 4,
+
+        name: "After Dark Hoodie",
+
+        price: 82,
+
+        category: "Hoodies",
+
+        description:
+            "A simple everyday hoodie designed around a dark urban aesthetic.",
+
+        image:
+            "https://images.unsplash.com/photo-1578681994506-b8f463449011?auto=format&fit=crop&w=700&q=80",
+
+        sizes: ["S", "M", "L", "XL"]
+    },
+
+
+    {
+        id: 5,
+
+        name: "Utility Sling Bag",
+
+        price: 38,
+
+        category: "Accessories",
+
+        description:
+            "Compact utility bag for carrying your everyday essentials while keeping the streetwear look.",
+
+        image:
+            "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=700&q=80",
+
+        sizes: ["One Size"]
+    },
+
+
+    {
+        id: 6,
+
+        name: "Neko Street Cap",
+
+        price: 28,
+
+        category: "Accessories",
+
+        description:
+            "A simple street cap with a clean shape that works with casual everyday outfits.",
+
+        image:
+            "https://images.unsplash.com/photo-1588850561407-ed78c282e89b?auto=format&fit=crop&w=700&q=80",
+
+        sizes: ["One Size"]
+    }
+
+];
+
+
+
+// =====================================================
+// CART STATE
+// =====================================================
+
+let cart = [];
+
+let currentCategory = "All";
+
+let currentDetailProduct = null;
+
+let detailSelectedSize = null;
+
+const selectedSizes = {};
+
+
+
+// =====================================================
+// RENDER PRODUCTS
+// =====================================================
+
+function renderProducts() {
+
+    const grid =
+        document.getElementById("productGrid");
+
+
+    let filteredProducts;
+
+
+    if (currentCategory === "All") {
+
+        filteredProducts = products;
+
+    } else {
+
+        filteredProducts =
+            products.filter(
+                product =>
+                    product.category === currentCategory
+            );
+
+    }
+
+
+    grid.innerHTML = "";
+
+
+    filteredProducts.forEach(product => {
+
+
+        const card =
+            document.createElement("div");
+
+
+        card.className =
+            "product-card";
+
+
+        card.innerHTML = `
+
+            <div
+                onclick="openProductDetails(${product.id})"
+                class="bg-[#f1f0eb] rounded-xl overflow-hidden cursor-pointer">
+
+                <div class="relative overflow-hidden">
+
+                    <img
+                        src="${product.image}"
+                        alt="${product.name}"
+                        class="product-image w-full h-[380px] object-cover">
+
+
+                    <span
+                        class="absolute top-4 left-4 bg-white px-3 py-1 rounded-full text-xs font-semibold">
+
+                        ${product.category}
+
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="pt-4">
+
+
+                <div
+                    onclick="openProductDetails(${product.id})"
+                    class="cursor-pointer">
+
+                    <h3
+                        class="font-semibold hover:text-red-500 transition">
+
+                        ${product.name}
+
+                    </h3>
+
+
+                    <p class="text-gray-500 text-sm mt-1">
+
+                        $${product.price.toFixed(2)}
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="flex gap-2 mt-4">
+
+                    ${product.sizes.map(
+                        (size, index) => `
+
+                        <button
+                            onclick="selectSize(${product.id}, '${size}', this)"
+                            class="size-btn ${
+                                index === 0
+                                    ? "active"
+                                    : ""
+                            } border border-gray-300 rounded-md px-3 py-2 text-xs"
+                            data-product="${product.id}"
+                            data-size="${size}">
+
+                            ${size}
+
+                        </button>
+
+                    `).join("")}
+
+                </div>
+
+
+
+                <button
+                    onclick="addToCart(${product.id})"
+                    class="w-full mt-4 bg-black text-white py-3 rounded-lg text-sm font-semibold hover:bg-red-500 transition">
+
+                    Add to cart
+
+                </button>
+
+            </div>
+
+        `;
+
+
+        grid.appendChild(card);
+
+    });
+
+}
+
+
+
+// =====================================================
+// CATEGORY FILTER
+// =====================================================
+
+function setCategory(category) {
+
+    currentCategory = category;
+
+
+    renderProducts();
+
+
+    document
+        .querySelectorAll(".filter-btn")
+        .forEach(button => {
+
+            button.classList.remove(
+                "bg-black",
+                "text-white"
+            );
+
+        });
+
+
+    document
+        .querySelectorAll(".filter-btn")
+        .forEach(button => {
+
+            if (
+                button.innerText.trim() === category
+            ) {
+
+                button.classList.add(
+                    "bg-black",
+                    "text-white"
+                );
+
+            }
+
+        });
+
+}
+
+
+
+// =====================================================
+// SELECT SIZE FROM PRODUCT CARD
+// =====================================================
+
+function selectSize(productId, size, button) {
+
+    selectedSizes[productId] = size;
+
+
+    document
+        .querySelectorAll(
+            `[data-product="${productId}"]`
+        )
+        .forEach(btn => {
+
+            btn.classList.remove("active");
+
+        });
+
+
+    button.classList.add("active");
+
+}
+
+
+
+// =====================================================
+// OPEN PRODUCT DETAILS
+// =====================================================
+
+function openProductDetails(productId) {
+
+
+    const product =
+        products.find(
+            item => item.id === productId
+        );
+
+
+    if (!product) {
+        return;
+    }
+
+
+    currentDetailProduct = product;
+
+
+    detailSelectedSize =
+        selectedSizes[productId]
+        || product.sizes[0];
+
+
+    document.getElementById("detailImage").src =
+        product.image;
+
+
+    document.getElementById("detailImage").alt =
+        product.name;
+
+
+    document.getElementById("detailName").innerText =
+        product.name;
+
+
+    document.getElementById("detailPrice").innerText =
+        `$${product.price.toFixed(2)}`;
+
+
+    document.getElementById("detailCategory").innerText =
+        product.category;
+
+
+    document.getElementById("detailDescription").innerText =
+        product.description;
+
+
+
+    // Size buttons
+
+    const sizesContainer =
+        document.getElementById("detailSizes");
+
+
+    sizesContainer.innerHTML = "";
+
+
+    product.sizes.forEach(size => {
+
+
+        const button =
+            document.createElement("button");
+
+
+        button.innerText = size;
+
+
+        button.className =
+            "border border-gray-300 rounded-md px-4 py-2 text-sm transition";
+
+
+        if (size === detailSelectedSize) {
+
+            button.classList.add(
+                "bg-black",
+                "text-white"
+            );
+
+        }
+
+
+        button.onclick = function () {
+
+
+            detailSelectedSize = size;
+
+
+            sizesContainer
+                .querySelectorAll("button")
+                .forEach(btn => {
+
+                    btn.classList.remove(
+                        "bg-black",
+                        "text-white"
+                    );
+
+                });
+
+
+            button.classList.add(
+                "bg-black",
+                "text-white"
+            );
+
+        };
+
+
+        sizesContainer.appendChild(button);
+
+    });
+
+
+
+    // Add button
+
+    document.getElementById("detailAddButton").onclick =
+        function () {
+
+
+            selectedSizes[product.id] =
+                detailSelectedSize;
+
+
+            addToCart(product.id);
+
+
+            closeProductDetails();
+
+        };
+
+
+
+    // Show modal
+
+    const modal =
+        document.getElementById("productModal");
+
+
+    modal.classList.remove("hidden");
+
+    modal.classList.add("flex");
+
+
+    document.body.style.overflow = "hidden";
+
+}
+
+
+
+// =====================================================
+// CLOSE PRODUCT DETAILS
+// =====================================================
+
+function closeProductDetails() {
+
+
+    const modal =
+        document.getElementById("productModal");
+
+
+    modal.classList.add("hidden");
+
+    modal.classList.remove("flex");
+
+
+    document.body.style.overflow = "";
+
+}
+
+
+
+// =====================================================
+// ADD TO CART
+// =====================================================
+
+function addToCart(productId) {
+
+
+    const product =
+        products.find(
+            item => item.id === productId
+        );
+
+
+    if (!product) {
+        return;
+    }
+
+
+    const size =
+        selectedSizes[productId]
+        || product.sizes[0];
+
+
+    const existingItem =
+        cart.find(
+            item =>
+                item.id === productId
+                && item.size === size
+        );
+
+
+    if (existingItem) {
+
+        existingItem.quantity++;
+
+    } else {
+
+
+        cart.push({
+
+            id: product.id,
+
+            name: product.name,
+
+            price: product.price,
+
+            image: product.image,
+
+            size: size,
+
+            quantity: 1
+
+        });
+
+    }
+
+
+    updateCart();
+
+
+    openCart();
+
+}
+
+
+
+// =====================================================
+// UPDATE CART
+// =====================================================
+
+function updateCart() {
+
+
+    const cartItems =
+        document.getElementById("cartItems");
+
+
+    const count =
+        cart.reduce(
+            (total, item) =>
+                total + item.quantity,
+            0
+        );
+
+
+    document.getElementById("cartCount").innerText =
+        count;
+
+
+    document.getElementById("cartItemsText").innerText =
+        `${count} ${count === 1 ? "item" : "items"}`;
+
+
+
+    // Empty cart
+
+    if (cart.length === 0) {
+
+
+        cartItems.innerHTML = `
+
+            <div
+                class="h-full flex items-center justify-center text-center">
+
+                <div>
+
+                    <p class="text-lg font-semibold">
+                        Your cart is empty
+                    </p>
+
+                    <p class="text-sm text-gray-500 mt-2">
+                        Add something from the shop.
+                    </p>
+
+                </div>
+
+            </div>
+
+        `;
+
+    } else {
+
+
+        cartItems.innerHTML =
+
+            cart.map(
+                (item, index) => `
+
+                <div
+                    class="flex gap-4 border-b pb-5 mb-5">
+
+
+                    <img
+                        src="${item.image}"
+                        alt="${item.name}"
+                        class="w-20 h-24 object-cover rounded-lg">
+
+
+                    <div class="flex-1">
+
+
+                        <div
+                            class="flex justify-between gap-2">
+
+
+                            <div>
+
+                                <h3
+                                    class="font-semibold text-sm">
+
+                                    ${item.name}
+
+                                </h3>
+
+
+                                <p
+                                    class="text-xs text-gray-500 mt-1">
+
+                                    Size: ${item.size}
+
+                                </p>
+
+
+                                <p
+                                    class="text-sm mt-2">
+
+                                    $${item.price.toFixed(2)}
+
+                                </p>
+
+                            </div>
+
+
+                            <button
+                                onclick="removeItem(${index})"
+                                aria-label="Remove ${item.name}"
+                                class="text-gray-400 hover:text-red-500">
+
+                                ×
+
+                            </button>
+
+                        </div>
+
+
+
+                        <div
+                            class="flex items-center gap-3 mt-3">
+
+
+                            <button
+                                onclick="changeQuantity(${index}, -1)"
+                                aria-label="Decrease quantity"
+                                class="w-7 h-7 border rounded-full">
+
+                                −
+
+                            </button>
+
+
+                            <span class="text-sm">
+
+                                ${item.quantity}
+
+                            </span>
+
+
+                            <button
+                                onclick="changeQuantity(${index}, 1)"
+                                aria-label="Increase quantity"
+                                class="w-7 h-7 border rounded-full">
+
+                                +
+
+                            </button>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            `
+            ).join("");
+
+    }
+
+
+
+    // Calculate subtotal
+
+    const subtotal =
+        cart.reduce(
+            (total, item) =>
+                total +
+                item.price *
+                item.quantity,
+            0
+        );
+
+
+    // Shipping
+
+    const shipping =
+        subtotal === 0
+            ? 0
+            : subtotal >= 100
+                ? 0
+                : 8;
+
+
+    // Display totals
+
+    document.getElementById("cartSubtotal").innerText =
+        `$${subtotal.toFixed(2)}`;
+
+
+    document.getElementById("cartShipping").innerText =
+        shipping === 0
+            ? "Free"
+            : `$${shipping.toFixed(2)}`;
+
+
+    document.getElementById("cartTotal").innerText =
+        `$${(subtotal + shipping).toFixed(2)}`;
+
+}
+
+
+
+// =====================================================
+// CHANGE QUANTITY
+// =====================================================
+
+function changeQuantity(index, amount) {
+
+
+    if (!cart[index]) {
+        return;
+    }
+
+
+    cart[index].quantity += amount;
+
+
+    if (cart[index].quantity <= 0) {
+
+        cart.splice(index, 1);
+
+    }
+
+
+    updateCart();
+
+}
+
+
+
+// =====================================================
+// REMOVE CART ITEM
+// =====================================================
+
+function removeItem(index) {
+
+    cart.splice(index, 1);
+
+    updateCart();
+
+}
+
+
+
+// =====================================================
+// OPEN CART
+// =====================================================
+
+function openCart() {
+
+
+    const drawer =
+        document.getElementById("cartDrawer");
+
+
+    const overlay =
+        document.getElementById("cartOverlay");
+
+
+    drawer.classList.remove(
+        "cart-hidden"
+    );
+
+
+    drawer.classList.add(
+        "cart-visible"
+    );
+
+
+    overlay.classList.remove(
+        "hidden"
+    );
+
+
+    document.body.style.overflow =
+        "hidden";
+
+}
+
+
+
+// =====================================================
+// CLOSE CART
+// =====================================================
+
+function closeCart() {
+
+
+    const drawer =
+        document.getElementById("cartDrawer");
+
+
+    const overlay =
+        document.getElementById("cartOverlay");
+
+
+    drawer.classList.remove(
+        "cart-visible"
+    );
+
+
+    drawer.classList.add(
+        "cart-hidden"
+    );
+
+
+    overlay.classList.add(
+        "hidden"
+    );
+
+
+    document.body.style.overflow =
+        "";
+
+}
+
+
+
+// =====================================================
+// CHECKOUT
+// =====================================================
+
+function checkout() {
+
+
+    if (cart.length === 0) {
+
+        alert("Your cart is empty.");
+
+        return;
+
+    }
+
+
+    const modal =
+        document.getElementById("checkoutModal");
+
+
+    modal.classList.remove("hidden");
+
+    modal.classList.add("flex");
+
+}
+
+
+
+// =====================================================
+// CLOSE CHECKOUT
+// =====================================================
+
+function closeCheckout() {
+
+
+    const modal =
+        document.getElementById("checkoutModal");
+
+
+    modal.classList.add("hidden");
+
+    modal.classList.remove("flex");
+
+}
+
+
+
+// =====================================================
+// PLACE DEMO ORDER
+// =====================================================
+
+function placeOrder() {
+
+
+    alert(
+        "Demo order placed successfully!"
+    );
+
+
+    cart = [];
+
+
+    updateCart();
+
+
+    closeCheckout();
+
+    closeCart();
+
+}
+
+
+
+// =====================================================
+// ESCAPE KEY
+// =====================================================
+
+document.addEventListener(
+    "keydown",
+    function(event) {
+
+
+        if (event.key === "Escape") {
+
+            closeCart();
+
+            closeCheckout();
+
+            closeProductDetails();
+
+        }
+
+    }
+);
+
+
+
+// =====================================================
+// INITIAL LOAD
+// =====================================================
+
+renderProducts();
+
+updateCart();
+
+</script>
+
+</body>
+</html>
